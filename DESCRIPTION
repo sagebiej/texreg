@@ -19,7 +19,7 @@ Suggests:
   testthat (>= 2.0.0),
   lmtest (>= 0.9-34)
 Depends: R (>= 3.5)
-Imports: methods, stats, httr
+Imports: methods, stats, httr, apollo, janitor
 Enhances:
   AER,
   alpaca,
