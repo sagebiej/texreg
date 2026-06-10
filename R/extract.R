@@ -8889,9 +8889,12 @@ extract.apollo_estimation <- function(model,
       stop("The 'janitor' package is required to extract apollo models.\n",
            "To install it, enter 'install.packages(\"janitor\")'.", call. = FALSE)
     }
-    estimated <- janitor::clean_names(
-      as.data.frame(apollo::apollo_modelOutput(model, settings))
+    # apollo_modelOutput() prints the full estimation report to the console;
+    # capture it so that extract() stays silent like the other extract methods
+    utils::capture.output(
+      modelOutput <- suppressMessages(apollo::apollo_modelOutput(model, settings))
     )
+    estimated <- janitor::clean_names(as.data.frame(modelOutput))
     # pick which SE & p-value columns to use
     switch(se,
            rob = {
