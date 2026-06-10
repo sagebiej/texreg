@@ -8881,6 +8881,14 @@ extract.apollo_estimation <- function(model,
   # pull out the standard apollo output table
   settings <- list(printPVal = TRUE)
   if (is.null(wtpest)) {
+    if (!requireNamespace("apollo", quietly = TRUE)) {
+      stop("The 'apollo' package is required to extract apollo models.\n",
+           "To install it, enter 'install.packages(\"apollo\")'.", call. = FALSE)
+    }
+    if (!requireNamespace("janitor", quietly = TRUE)) {
+      stop("The 'janitor' package is required to extract apollo models.\n",
+           "To install it, enter 'install.packages(\"janitor\")'.", call. = FALSE)
+    }
     estimated <- janitor::clean_names(
       as.data.frame(apollo::apollo_modelOutput(model, settings))
     )
