@@ -37,6 +37,7 @@ test_that("plotreg works", {
 test_that("plotreg works with confidence intervals using the biglm package", {
   skip_if_not_installed("ggplot2", minimum_version = "3.3.1")
   skip_if_not_installed("biglm")
+  skip_if_not_installed("broom")
   require("biglm")
   skip_if_not_installed("DBI")
   data("trees")

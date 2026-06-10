@@ -596,6 +596,8 @@ huxtablereg <- function(l,
   return(hx)
 }
 
+requireNamespace <- NULL # for testthat mocked bindings
+
 #' Flexibly choose the right table output format for use with \pkg{knitr}
 #'
 #' Flexibly choose the right table output format for use with \pkg{knitr}.

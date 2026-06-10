@@ -5910,8 +5910,8 @@ extract.oglmx <- function(model,
 
 #' \code{\link{extract}} method for \code{oglmx} objects
 #'
-#' \code{\link{extract}} method for \code{oglmx} objects created by the
-#' \code{\link[oglmx]{oglmx}} function in the \pkg{oglmx} package.
+#' \code{\link{extract}} method for \code{oglmx} objects created by the oglmx
+#' function in the oglmx package.
 #'
 #' @param model A statistical model object.
 #' @param include.aic Report Akaike's Information Criterion (AIC) in the GOF
